@@ -4,6 +4,7 @@
   "description": "Backend for eipirkka.info, a web app for detecting Pirkka III beer cans",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
