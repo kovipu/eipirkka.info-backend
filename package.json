@@ -1,0 +1,24 @@
+{
+  "name": "eipirkka.info-backend",
+  "version": "1.0.0",
+  "description": "Backend for eipirkka.info, a web app for detecting Pirkka III beer cans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kovipu/eipirkka.info-backend.git"
+  },
+  "keywords": [
+    "AI",
+    "machinevision",
+    "ML"
+  ],
+  "author": "EIS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kovipu/eipirkka.info-backend/issues"
+  },
+  "homepage": "https://github.com/kovipu/eipirkka.info-backend#readme"
+}
