@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/kovipu/eipirkka.info-backend/issues"
   },
-  "homepage": "https://github.com/kovipu/eipirkka.info-backend#readme"
+  "homepage": "https://github.com/kovipu/eipirkka.info-backend#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0"
+  }
 }
