@@ -10,6 +10,7 @@ function VisionService() {
   console.log('name:', name)
 
   function analyzeImage(data) {
+    console.log('Data', data);
     if (!data.path) {
       console.log('No file received');
       return { success: false };
@@ -27,10 +28,13 @@ function VisionService() {
     return predictionClient.predict({ name, payload })
       .then(responses => {
         const {displayName, classification} = responses[0].payload[0];
+        console.log(displayName, classification);
         return {
           displayName,
           classificationScore: classification.score
         };
+      }).catch(err => {
+        console.error('Error', err);
       })
   }
   return {
