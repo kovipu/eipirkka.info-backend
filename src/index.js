@@ -9,7 +9,8 @@ const visionService = VisionService();
 const upload = multer({ dest: '/tmp/' });
 
 const corsWhitelist = [
-  'http://localhost:3000'
+  'http://localhost:3000',
+  process.env.FRONTEND_URL
 ]
 
 const corsOptions = {
