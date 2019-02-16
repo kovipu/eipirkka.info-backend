@@ -1,4 +1,4 @@
-const automl = require('@google-cloud/automl');
+const automl = require('@google-cloud/automl').v1beta1;
 const fs = require('fs');
 
 const { PROJECT_ID, REGION_NAME, MODEL_ID } = process.env;
@@ -16,6 +16,7 @@ function VisionService() {
     }
 
     const file = fs.readFileSync(data.path);
+    // TODO: remove file from disk
 
     const payload = {
       image: {
@@ -23,9 +24,14 @@ function VisionService() {
       }
     };
 
-    predictionClient.predict({ name, payload })
-      .then(res => console.log('Response: ', res))
-      .catch(err => console.log('Error: ', err));
+    return predictionClient.predict({ name, payload })
+      .then(responses => {
+        const {displayName, classification} = responses[0].payload[0];
+        return {
+          displayName,
+          classificationScore: classification.score
+        };
+      })
   }
   return {
     analyzeImage
