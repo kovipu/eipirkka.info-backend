@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
   res.send('hello world');
 });
 
-app.post('/predict', upload.single('image'), (req, res) => {
+app.post('/predict', cors(corsOptions), upload.single('image'), (req, res) => {
   const base64data = req.file;
   visionService.analyzeImage(base64data)
     .then(response => res.send(response))
